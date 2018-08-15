@@ -23,19 +23,66 @@ Things you may want to cover:
 
 * ...
 
-<!-- ## membersテーブル -->
+## membersテーブル  <!-- users,groupの中間テーブル -->
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|body|text|null: false, foreign_key: true|
-|image|string|null: false, foreign_key: true|
 
-<!-- ### Association -->
+### Association
 - belongs_to :group
 - belongs_to :user
-- belongs_to :body
-- belongs_to :image
 
 
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, unique: true, primary_key: true|
+|name|string|index: true, null: false, foreign_key: true|
+|mail|string|null: false, foreign_key: true|
+
+### Association
+- has_many :groups
+- has_many :messages
+- has_many :members
+
+
+## groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|group_id|integer|null: false, foreign_key: true|
+|group_name|integer|null: false, foreign_key: true|
+
+### Association
+- has_many :uesrs
+- has_many :messages
+- has_many :members
+
+
+## commentsテーブル  <!-- users,messagesの中間テーブル -->
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|message_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :message
+- belongs_to :user
+
+
+## messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|message_id|integer|null: false, foreign_key: true|
+|body|text|null: false|
+|image|string||
+
+### Association
+- has_many :users
+- has_many :groups
+- has_many :members
