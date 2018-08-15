@@ -27,8 +27,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -39,12 +39,10 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, unique: true, primary_key: true|
-|name|string|index: true, null: false, foreign_key: true|
-|mail|string|null: false, foreign_key: true|
+|name|string|index: true, null: false|
 
 ### Association
-- has_many :groups
+- has_many :groups, through: members
 - has_many :messages
 - has_many :members
 
@@ -53,32 +51,18 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
-|group_name|integer|null: false, foreign_key: true|
+|group_name|integer|null: false|
 
 ### Association
-- has_many :uesrs
+- has_many :uesrs, through: members
 - has_many :messages
 - has_many :members
-
-
-## commentsテーブル  <!-- users,messagesの中間テーブル -->
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|message_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :message
-- belongs_to :user
 
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|message_id|integer|null: false, foreign_key: true|
 |body|text|null: false|
 |image|string||
 
