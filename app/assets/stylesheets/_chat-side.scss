@@ -20,10 +20,10 @@
 	    float: right;
 	    
 	    .list {
-		  display: inline-block;
+		  	display: inline-block;
 	    }
 	    .icon {
-          color: $White;
+        color: $White;
 	    }
 	  }
 	}
@@ -33,18 +33,18 @@
 	  height: calc(100vh - 100px);
 	  padding: 0 20px;
 
-	.group {	
-	  color: $White;
-	  padding: 20px 0 40px;
+		.group {	
+		  color: $White;
+		  padding: 20px 0 40px;
 
-	  &__name {
-	    font-size: 15px;
-	  }
+		  &__name {
+		    font-size: 15px;
+		  }
 
-	  &__message {
-	    font-size: 11px;
-	    margin-top: 5px;
-	  }
-	}
-    }
+		  &__message {
+		    font-size: 11px;
+		    margin-top: 5px;
+		  }
+		}
+  }
 }
