@@ -1,0 +1,115 @@
+.chat-main {
+  float: right;
+  height: 100%;
+  width: calc(100% - 300px);
+
+	.header {
+    padding: 0 40px;
+  	height: 100px;
+	
+  	&__group {
+			float: left;
+
+    	&--name {
+	  		font-size: 20px;
+	  		color: #333333;
+	  		margin-top: 35px;
+    	}
+
+    &--member {
+		  font-size: 12px;
+		  color: gray;
+		  margin-top: 15px;
+	   }
+    }
+
+    &__edit {
+		  float: right;
+		  border: 1px solid $LightBlue;
+	    color: $LightBlue;
+	    height: 40px;
+	    line-height: 40px;
+	    margin-top: 28px;
+	    padding: 0 20px;
+  	}
+  }
+
+	.messages {
+	  background-color: #EEEEEE;
+	  height: calc(100vh - 100px - 90px - 46px);
+	  padding: 46px 40px 0;
+
+		.message {
+		  .upper-message {
+				display: flex;
+
+				&__user-name {
+				  font-size: 16px;
+				  color: $Silver;
+				  font-weight: bold;
+				}
+
+				&__date {
+				  font-size: 12px;
+				  color: #999999;
+				  padding-left: 10px;
+				}
+			}
+
+		  .lower-message {
+				margin-top: 10px;
+
+				&__comment {
+				  font-size: 14px;
+				  color: $Silver;
+				  margin-bottom: 40px;	
+				}
+		  }
+		}
+	}
+
+	.form {
+	  background-color: #DDDDDD;
+	  height: 90px;
+
+		.message-box {
+		  padding: 20px 40px;
+
+		  &__message {
+				background-color: white;
+				float: left;
+				line-height: 50px;
+				height: 50px;
+				font-size: 16px;
+				color: $Silver;
+				padding-left: 10px;
+				width: calc(100% - 150px);
+			}
+
+		  &__mask {
+				background-color: white;
+				float: left;
+				height: 50px;
+				padding-right: 10px;
+
+				&--image {
+			    line-height: 50px;
+				}
+
+				.hidden {
+				  display: none;
+				}
+		  }
+
+		  &__send {
+				float: right;
+				background-color: $LightBlue;
+				border: none;
+				color: $White;
+				height: 50px;
+			  line-height: 50px;
+				padding: 0 30px;
+			}	
+		}
+	}
+}
