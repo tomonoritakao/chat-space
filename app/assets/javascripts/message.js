@@ -68,7 +68,7 @@ $(document).on('turbolinks:load', function() {
 			console.log("失敗")
 		});
 		}
-	else {
-	clearInterval(interval);
-	}} , 5000 );
+		else {
+			clearInterval(interval);
+		}} , 5000 );
 });
