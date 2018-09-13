@@ -50,12 +50,7 @@ $(document).on('turbolinks:load', function() {
 
 	var interval = setInterval(function() {
 		if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-			if($('.message')[0]) {
-			var message_id = $('.message:last').data('id');
-			}
-		else {
-			var message_id = 0;
-		}
+			var message_id = ($('.message')[0]) ? $('.message:last').data('id') : "";
 
 		$.ajax({
 			url: location.href,
