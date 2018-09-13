@@ -20,12 +20,10 @@ $(document).on('turbolinks:load', function() {
 								</div>`
 		return html;
 	}
-
 	$('#new_message').on('submit', function(e) {
 		e.preventDefault();		
 		var formData = new FormData($(this).get(0));
 		var url = $(this).attr('action');
-
 		$.ajax({
 			url: url,
 			type: "POST",
@@ -47,11 +45,9 @@ $(document).on('turbolinks:load', function() {
 			$(".message-box__submit").removeAttr("disabled");
 		});
 	});
-
 	var interval = setInterval(function() {
 		if (window.location.href.match(/\/groups\/\d+\/messages/)) {
 			var message_id = ($('.message')[0]) ? $('.message:last').data('id') : "";
-
 		$.ajax({
 			url: location.href,
 			type: "GET",
@@ -72,7 +68,6 @@ $(document).on('turbolinks:load', function() {
 			console.log("失敗")
 		});
 		}
-
 	else {
 	clearInterval(interval);
 	}} , 5000 );
