@@ -1,10 +1,11 @@
-.upper-message
-	.upper-message__user-name
-		= message.user.name
-	.upper-message__date
-		= format_posted_time(message.created_at)
-.lower-message
-	- if message.content.present?
-		%p.lower-message__comment
-			= message.content
-	= image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+.message{id: message.id}
+	.upper-message
+		.upper-message__user-name
+			= message.user.name
+		.upper-message__date
+			= format_posted_time(message.created_at)
+	.lower-message
+		- if message.content.present?
+			%p.lower-message__comment
+				= message.content
+		= image_tag message.image.url, class: 'lower-message__image' if message.image.present?
