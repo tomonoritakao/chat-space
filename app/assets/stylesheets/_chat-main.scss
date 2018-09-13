@@ -40,31 +40,33 @@
 	  padding: 46px 40px 0;
 	  overflow-y: auto;
 
-		.upper-message {
-			display: flex;
+		.message {
+			.upper-message {
+				display: flex;
 
-			&__user-name {
-			  font-size: 16px;
-			  color: $Silver;
-			  font-weight: bold;
+				&__user-name {
+				  font-size: 16px;
+				  color: $Silver;
+				  font-weight: bold;
+				}
+
+				&__date {
+				  font-size: 12px;
+				  color: $Gray;
+				  padding-left: 10px;
+				}
 			}
 
-			&__date {
-			  font-size: 12px;
-			  color: $Gray;
-			  padding-left: 10px;
+			.lower-message {
+				margin-top: 10px;
+
+				&__comment {
+				  font-size: 14px;
+				  color: $Silver;
+				  margin-bottom: 40px;
+				}
 			}
 		}
-
-		.lower-message {
-			margin-top: 10px;
-
-			&__comment {
-			  font-size: 14px;
-			  color: $Silver;
-			  margin-bottom: 40px;
-			}
-	  }
 	}
 
 	.form {

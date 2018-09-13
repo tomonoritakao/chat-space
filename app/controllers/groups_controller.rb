@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
  
- 	before_action :set_group
+ 	before_action :authenticate_user!, only: :set_group
 
 	def index	
 	end
